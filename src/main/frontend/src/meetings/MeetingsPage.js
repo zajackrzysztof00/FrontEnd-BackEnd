@@ -59,12 +59,6 @@ export default function MeetingsPage({username}) {
         fetchMeetings();
     }
 
-    // function handleNewMeeting(meeting) {
-    //     const nextMeetings = [...meetings, meeting];
-    //     setMeetings(nextMeetings);
-    //     setAddingNewMeeting(false);
-    // }
-
     async function handleDeleteMeeting(meeting) {
         const response = await fetch(`/api/meetings/${meeting.id}`, {
             method: 'DELETE',

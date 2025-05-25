@@ -4,8 +4,7 @@ export default function ParticipantsList({participants, onDelete}) {
         <table>
             <thead>
             <tr>
-                <th>Nazwa spotkania</th>
-                <th>Opis</th>
+                <th>Email</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -13,8 +12,7 @@ export default function ParticipantsList({participants, onDelete}) {
             <tbody>
             {
                 participants.map((participant, index) => <tr key={index}>
-                    <td>{participant.title}</td>
-                    <td>{participant.description}</td>
+                    <td>{participant.login}</td>
                     <td><button onClick={() => onDelete(participant)}>Usuń członka</button></td>
                 </tr>)
             }
