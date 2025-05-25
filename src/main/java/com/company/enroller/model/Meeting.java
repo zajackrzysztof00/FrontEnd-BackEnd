@@ -81,4 +81,13 @@ public class Meeting {
     public Collection<Participant> getParticipants() {
         return participants;
     }
+
+    public Participant getParticipantByLogin(String login) {
+        for (Participant participant : participants) {
+            if (participant.getLogin().equals(login)) {
+                return participant;
+            }
+        }
+        return null;
+    }
 }
