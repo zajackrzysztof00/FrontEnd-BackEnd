@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import NewMeetingForm from "./NewMeetingForm";
 import MeetingsList from "./MeetingsList";
+import ParticipantsList from "./ParticipantsList";
 
 export default function MeetingsPage({username}) {
     const [meetings, setMeetings] = useState([]);
@@ -79,11 +80,11 @@ export default function MeetingsPage({username}) {
             <h2>Zajęcia ({meetings.length})</h2>
             {
                 addingNewMeeting
-                    ? <NewMeetingForm onSubmit={(meeting) => handleNewMeeting(meeting)}/>
+                    ? <NewParticipantForm onSubmit={(meeting) => handleNewMeeting(meeting)}/>
                     : <button onClick={() => setAddingNewMeeting(true)}>Dodaj nowe spotkanie</button>
             }
             {meetings.length > 0 &&
-                <MeetingsList meetings={meetings} username={username}
+                <ParticipantsList meetings={meetings} username={username}
                               onDelete={handleDeleteMeeting} onAddParticipatnt={handleNewParticipant}/>}
         </div>
     )
